@@ -22,6 +22,9 @@
 */
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr(int nb);
+int		ft_atoi(const char *str);
+int		ft_strlen(char *s);
+void	ft_putchar_fd(char c, int fd);
 
 /*
 ** server functions
@@ -37,5 +40,7 @@ void	print_byte(char c, siginfo_t *info);
 */
 
 int		send_string(int pid, char *str);
+int		send_char(pid_t pid, char c);
+void	serv_response(int signal, siginfo_t *info, void *data);
 
 #endif
