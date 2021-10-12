@@ -71,8 +71,8 @@ int	send_char(pid_t pid, char c)
 		if (error)
 			return (error);
 		bit++;
-		if (!usleep(1000))
-			return (-1);
+		usleep(30000);
+			//return (-1);
 	}
 	return (error);
 }
