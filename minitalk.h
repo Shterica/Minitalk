@@ -6,7 +6,7 @@
 /*   By: shterica <shterica@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:09:07 by shterica          #+#    #+#             */
-/*   Updated: 2021/10/11 19:11:04 by shterica         ###   ########.fr       */
+/*   Updated: 2021/10/13 18:39:54 by shterica         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <signal.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+unsigned char	g_flag;
 
 /*
 ** utilities
@@ -39,6 +41,7 @@ void	print_byte(char c, siginfo_t *info);
 ** client functions
 */
 
+int		is_pid_valid(pid_t pid);
 int		send_string(int pid, char *str);
 int		send_char(pid_t pid, char c);
 void	serv_response(int signal, siginfo_t *info, void *data);
